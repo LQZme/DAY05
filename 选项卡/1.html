@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            padding: 50px;
+        }
+
+        .card {
+            width: 300px;
+            background-color: pink;
+        }
+
+        .card .title {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .card .title li{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .card li {
+            float: left;
+        }
+        .card div {
+            clear: both;
+            display: none;
+            width: 300px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        .card li.active {
+            background-color: red;
+            color: white;
+        }
+
+        .card div.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <ul class="title">
+            <li class="active">标题一</li>
+            <li>标题二</li>
+            <li>标题三</li>
+        </ul>
+        <div class="active">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+    <script>
+        //获取card的元素对象，并赋值给oCard
+        var oCard = document.getElementById('card')
+        
+        //获取card下的所有li元素，并赋值给aLi
+        var aLi = oCard.getElementsByTagName('li')
+
+        //获取card下的所有div元素，并赋值给aDiv
+        var aDiv = oCard.getElementsByTagName('div')
+        
+        for(var i = 0;i < aLi.length;i++){
+            aLi[i].index = i
+            aLi[i].onclick = function () {
+                for(var j = 0;j < aLi.length;j++){
+                    aLi[j].className = ""
+                    aDiv[j].className = ""
+                }
+                this.className = "active"
+                aDiv[this.index].className = "active"
+
+            }
+        }
+    </script>
+</body>
+</html>

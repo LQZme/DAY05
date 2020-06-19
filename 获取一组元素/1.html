@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div')
+        console.log(oDiv)
+        for(var i=0 ; i < oDiv.length ; i++){
+            oDiv[i].style.background = "red"
+        }
+    </script>
+</body>
+</html>

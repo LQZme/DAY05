@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="changeDiv('background','yellow')">变黄</button>
+    <button onclick="changeDiv('width','100px')">变宽100px</button>
+    <button onclick="changeDiv('height','200px')">变高200px</button>
+    <button onclick="changeDiv('fontSize','100px')">字体大小变为100</button>
+    <button onclick="changeDiv('color','pink')">字体颜色变为粉色</button>
+    <button onclick="changeDiv('background','green')">变绿</button>
+    <div class="box" id="box">awsl</div>
+    <script>
+        function changeDiv(name , value) {
+            document.getElementById('box').style[name] = value;
+        }
+    </script>
+</body>
+</html>
